@@ -2,51 +2,46 @@ import { navbar } from "vuepress-theme-hope";
 
 export default navbar([
   "/",
-  "/demo/",
+  // "/demo/",
   {
-    text: "博文",
-    icon: "pen-to-square",
-    prefix: "/posts/",
+    text: "Java",
+    // icon: "pen-to-square",
+    prefix: "/java",
     children: [
       {
-        text: "苹果",
-        icon: "pen-to-square",
-        prefix: "apple/",
+        text: "Java基础",
+        // icon: "pen-to-square",
+        prefix: "/basic",
         children: [
-          { text: "苹果1", icon: "pen-to-square", link: "1" },
-          { text: "苹果2", icon: "pen-to-square", link: "2" },
-          "3",
-          "4",
-        ],
+          {
+            text: "面向对象1",
+            // icon: "pen-to-square",
+            link: "/oop1",
+          },
+          {
+            text: "面向对象2",
+            // icon: "pen-to-square",
+            link: "/oop2"
+          },
+        ]
       },
       {
-        text: "香蕉",
-        icon: "pen-to-square",
-        prefix: "banana/",
+        text: "Java进阶",
+        // icon: "pen-to-square",
+        prefix: "/advanced",
         children: [
           {
-            text: "香蕉 1",
-            icon: "pen-to-square",
-            link: "1",
+            text: "集合框架",
+            // icon: "pen-to-square",
+            link: "/list"
           },
           {
-            text: "香蕉 2",
-            icon: "pen-to-square",
-            link: "2",
+            text: "并发框架",
+            // icon: "pen-to-square",
+            link: "/concurrent"
           },
-          "3",
-          "4",
-        ],
+        ]
       },
-      { text: "樱桃", icon: "pen-to-square", link: "cherry" },
-      { text: "火龙果", icon: "pen-to-square", link: "dragonfruit" },
-      "tomato",
-      "strawberry",
-    ],
-  },
-  {
-    text: "V2 文档",
-    icon: "book",
-    link: "https://theme-hope.vuejs.press/zh/",
+    ]
   },
 ]);

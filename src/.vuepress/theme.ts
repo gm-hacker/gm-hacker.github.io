@@ -39,34 +39,6 @@ export default hopeTheme({
       Wechat: "weixin.jpg",
       Email: "mailto:gm-hacker@qq.com",
       GitHub: "https://github.com/gm-hacker",
-      // Baidu: "https://example.com",
-      // BiliBili: "https://example.com",
-      // Bitbucket: "https://example.com",
-      // Dingding: "https://example.com",
-      // Discord: "https://example.com",
-      // Dribbble: "https://example.com",
-      // Evernote: "https://example.com",
-      // Facebook: "https://example.com",
-      // Flipboard: "https://example.com",
-      // Gitee: "https://example.com",
-      // Gitlab: "https://example.com",
-      // Gmail: "mailto:info@example.com",
-      // Instagram: "https://example.com",
-      // Lark: "https://example.com",
-      // Lines: "https://example.com",
-      // Linkedin: "https://example.com",
-      // Pinterest: "https://example.com",
-      // Pocket: "https://example.com",
-      // Qzone: "https://example.com",
-      // Reddit: "https://example.com",
-      // Rss: "https://example.com",
-      // Steam: "https://example.com",
-      // Twitter: "https://example.com",
-      // Weibo: "https://example.com",
-      // Whatsapp: "https://example.com",
-      // Youtube: "https://example.com",
-      // Zhihu: "https://example.com",
-      // MrHope: ["https://mister-hope.com", MR_HOPE_AVATAR],
     },
   },
 
@@ -76,6 +48,13 @@ export default hopeTheme({
     },
   },
 
+  // lastUpdated: 是否显示页面最后更新时间
+  // contributors: 是否显示页面贡献者
+  // editLink: 是否展示编辑此页链接
+  lastUpdated: false,
+  contributors: false,
+  editLink: false,
+
   // page meta
   metaLocales: {
     editLink: "在 GitHub 上编辑此页",
@@ -84,11 +63,12 @@ export default hopeTheme({
   plugins: {
     blog: true,
 
-    comment: {
-      // You should generate and use your own comment service
-      provider: "Waline",
-      serverURL: "https://waline-comment.vuejs.press",
-    },
+    //评论功能
+    // comment: {
+    //   // You should generate and use your own comment service
+    //   provider: "Waline",
+    //   serverURL: "https://waline-comment.vuejs.press",
+    // },
 
     // all features are enabled for demo, only preserve features you need here
     mdEnhance: {
