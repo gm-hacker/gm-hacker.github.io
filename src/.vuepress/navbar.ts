@@ -4,6 +4,16 @@ export default navbar([
   "/",
   // "/demo/",
   {
+    text: "面试",
+    prefix: "/面试/",
+    children: [
+      "1-Java基础",
+      "2-Java集合",
+      "3-Java并发",
+      "4-JVM",
+    ]
+  },
+  {
     text: "Java",
     // icon: "pen-to-square",
     prefix: "/java",
