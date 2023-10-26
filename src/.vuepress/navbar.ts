@@ -14,6 +14,23 @@ export default navbar([
     ]
   },
   {
+    text: "数据库",
+    prefix: "/数据库",
+    children: [
+      {
+        text: "Redis",
+        prefix: "/Redis/",
+        children: [
+            "1-Redis基础",
+            "2-Redis实战",
+            "3-Redis高级",
+            "4-Redis原理",
+        ]
+      }
+
+    ]
+  },
+  {
     text: "Java",
     // icon: "pen-to-square",
     prefix: "/java",
