@@ -8,7 +8,7 @@ tag:
 order: 1
 ---
 
-# Java基础
+# Java基础(一)
 
 ## 基础概念与常识
 
@@ -975,6 +975,6 @@ public class VariableLengthArgument {
 }
 ```
 
-## 参考：
+## 参考
 
 原文链接：https://javaguide.cn/java/basis/java-basic-questions-01.html
