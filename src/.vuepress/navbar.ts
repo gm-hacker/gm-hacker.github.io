@@ -7,7 +7,7 @@ export default navbar([
     text: "面试",
     prefix: "/面试/",
     children: [
-      "1-Java基础",
+      "1-Java基础(一)",
       "2-Java集合",
       "3-Java并发",
       "4-JVM",

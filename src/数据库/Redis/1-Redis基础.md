@@ -839,7 +839,7 @@ void tearDown() {
 
 Jedis本身是线程不安全的，并且频繁的创建和销毁连接会有性能损耗，因此我们推荐大家使用Jedis连接池代替Jedis的直连方式。
 
-```JAVA
+```java
 package com.heima.jedis.util;
 
 import redis.clients.jedis.*;
