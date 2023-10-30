@@ -6,4 +6,4 @@ set -e
 # 提交源项目代码到gitbub
 git add -A
 git commit -m "更新文档"
-git push git@github.com:gm-hacker/gm-hacker.github.io.git master
+git push origin master

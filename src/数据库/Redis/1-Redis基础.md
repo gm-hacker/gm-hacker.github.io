@@ -1385,7 +1385,10 @@ RedisTemplate可以接收任意Object作为值写入Redis：
 
 只不过写入前会把Object序列化为字节形式，默认是采用JDK序列化，得到的结果是这样的：
 
-![image-20231027012759096](1-Redis基础.assets/image-20231027012759096.png)
+```sh
+key:\xAC\xED\x00\x05t\x00\x04name
+name:\xAC\xED\x00\x05t\x00\x06\xE6\x9D\x8E\xE5\x9B\x9B
+```
 
 缺点：
 
@@ -1419,9 +1422,16 @@ public class RedisConfig {
 }
 ```
 
-这里采用了JSON序列化来代替默认的JDK序列化方式。最终结果如图：
+这里采用了JSON序列化来代替默认的JDK序列化方式。最终结果如下：
 
-![image-20231027012827896](1-Redis基础.assets/image-20231027012827896.png)
+```sh
+key:user:100
+value:{
+    "@class": "com.heima.redis.pojo.User",
+    "name":“虎哥”,
+    "age": 21
+}
+```
 
 整体可读性有了很大提升，并且能将Java对象自动的序列化为JSON字符串，并且查询时能自动把JSON反序列化为Java对象。不过，其中记录了序列化时对应的class名称，目的是为了查询时实现自动反序列化。这会带来额外的内存开销。
 
@@ -1433,11 +1443,28 @@ public class RedisConfig {
 
 因为存入和读取时的序列化及反序列化都是我们自己实现的，SpringDataRedis就不会将class信息写入Redis了。
 
-
-
 这种用法比较普遍，因此SpringDataRedis就提供了RedisTemplate的子类：StringRedisTemplate，它的key和value的序列化方式默认就是String方式。
 
-![image-20231027013021076](1-Redis基础.assets/image-20231027013021076.png)省去了我们自定义RedisTemplate的序列化方式的步骤，而是直接使用：
+```java
+package org.springframework.data.redis.core;
+
+public class StringRedisTemplate extends RedisTemplate<String, String> {
+
+	/**
+	 * Constructs a new <code>StringRedisTemplate</code> instance. {@link #setConnectionFactory(RedisConnectionFactory)}
+	 * and {@link #afterPropertiesSet()} still need to be called.
+	 */
+	public StringRedisTemplate() {
+		setKeySerializer(RedisSerializer.string());
+		setValueSerializer(RedisSerializer.string());
+		setHashKeySerializer(RedisSerializer.string());
+		setHashValueSerializer(RedisSerializer.string());
+	}
+	······
+}
+```
+
+省去了我们自定义RedisTemplate的序列化方式的步骤，而是直接使用：
 
 ```java
 @Autowired
