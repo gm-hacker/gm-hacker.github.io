@@ -22,10 +22,10 @@ export default navbar([
         text: "Redis",
         prefix: "/Redis/",
         children: [
-            "1-Redis基础",
-            "2-Redis实战",
-            "3-Redis高级",
-            "4-Redis原理",
+            "1-基础篇",
+            "2-实战篇",
+            "3-高级篇",
+            "4-原理篇",
         ]
       }
 
