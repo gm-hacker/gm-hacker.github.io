@@ -1381,7 +1381,10 @@ class RedisStringTests {
 
 RedisTemplate可以接收任意Object作为值写入Redis：
 
-![image-20231027012746986](1-Redis基础.assets/image-20231027012746986.png)
+```java
+redisTemplate.opsForValue().get(Object key);
+redisTemplate.opsForValue().set(Object key, Object value);
+```
 
 只不过写入前会把Object序列化为字节形式，默认是采用JDK序列化，得到的结果是这样的：
 
