@@ -10,7 +10,7 @@ export default navbar([
       {
         text: "Java基础",
         // icon: "pen-to-square",
-        link: "1-Java基础(一)",
+        link: "Java/1-Java基础面试题(一)",
       },
     ]
   },
