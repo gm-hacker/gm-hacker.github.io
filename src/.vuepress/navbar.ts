@@ -19,6 +19,27 @@ export default navbar([
     prefix: "/数据库",
     children: [
       {
+        text: "MySQL",
+        prefix: "/MySQL",
+        children: [
+          {
+            text: "基础篇",
+            // icon: "pen-to-square",
+            link: "/基础篇/README",
+          },
+          {
+            text: "高级篇",
+            // icon: "pen-to-square",
+            link: "/高级篇/README",
+          },
+          {
+            text: "进阶篇",
+            // icon: "pen-to-square",
+            link: "/进阶篇/README",
+          },
+        ]
+      },
+      {
         text: "Redis",
         prefix: "/Redis/",
         children: [
@@ -26,13 +47,10 @@ export default navbar([
           {
             text: "实战篇",
             // icon: "pen-to-square",
-            link: "2-实战篇(一)",
+            link: "实战篇/README",
           },
-          "5-高级篇",
-          "6-原理篇",
         ]
       }
-
     ]
   },
   {
