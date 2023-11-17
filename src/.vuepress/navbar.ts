@@ -54,6 +54,11 @@ export default navbar([
             // icon: "pen-to-square",
             link: "高级篇/README",
           },
+          {
+            text: "原理篇",
+            // icon: "pen-to-square",
+            link: "原理篇/README",
+          },
         ]
       }
     ]
