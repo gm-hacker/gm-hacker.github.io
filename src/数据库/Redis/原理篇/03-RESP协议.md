@@ -4,7 +4,7 @@ category:
   - Redis
 tag:
   - Redis
-order: 1
+order: 3
 ---
 
 # RESP协议
