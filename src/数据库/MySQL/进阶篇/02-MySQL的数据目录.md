@@ -5,10 +5,14 @@ category:
   - MySQL
 tag:
   - MySQL
-order: 1
+order: 2
 ---
 
-# 进阶1
+# 进MySQL的数据目录
+
+
+
+
 
 
 

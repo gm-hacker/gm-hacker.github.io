@@ -5,10 +5,10 @@ category:
   - MySQL
 tag:
   - MySQL
-order: 2
+order: 1
 ---
 
-# 高级1
+# Linux下MySQL的安装与使用
 
 
 
