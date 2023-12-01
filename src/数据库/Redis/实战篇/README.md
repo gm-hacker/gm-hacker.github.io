@@ -1,14 +1,9 @@
 ---
-date: 2021-09-10
-category:
-  - Redis
-tag:
-  - Redis
-order: 1
+index: false
 dir: 
     text: 实战篇
-    link: true
-    order: 2
+    link: false
+    order: 3
 ---
 
 # 实战篇
