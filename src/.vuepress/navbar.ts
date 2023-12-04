@@ -2,18 +2,42 @@ import { navbar } from "vuepress-theme-hope";
 
 export default navbar([
   "/",
-  // "/demo/",
-  // {
-  //   text: "面试",
-  //   prefix: "/面试/",
-  //   children: [
-  //     {
-  //       text: "Java基础",
-  //       // icon: "pen-to-square",
-  //       link: "Java/1-Java基础面试题(一)",
-  //     },
-  //   ]
-  // },
+  {
+    text: "Java",
+    prefix: "/Java",
+    children: [
+      {
+        text: "基础",
+        // icon: "pen-to-square",
+        link: "/基础/01-Java语言概述.md",
+      },
+      {
+        text: "集合",
+        // icon: "pen-to-square",
+        link: "/集合/01-基础（一）.md",
+      },
+      {
+        text: "并发",
+        // icon: "pen-to-square",
+        link: "/基础/01-基础（一）.md",
+      },
+      {
+        text: "IO",
+        // icon: "pen-to-square",
+        link: "/IO/01-基础（一）.md",
+      },
+      {
+        text: "新特性",
+        // icon: "pen-to-square",
+        link: "/新特性/01-基础（一）.md",
+      },
+      {
+        text: "JVM",
+        // icon: "pen-to-square",
+        link: "/JVM/01-基础（一）.md",
+      },
+    ]
+  },
   {
     text: "数据库",
     prefix: "/数据库",
@@ -36,6 +60,16 @@ export default navbar([
             // icon: "pen-to-square",
             link: "/Redis/01-总览.md",
           },
+          {
+            text: "MongoDB",
+            // icon: "pen-to-square",
+            link: "/MongoDB/01-总览.md",
+          },
+          {
+            text: "ElasticSearch",
+            // icon: "pen-to-square",
+            link: "/ElasticSearch/01-总览.md",
+          },
         ]
       },
     ]
@@ -44,6 +78,10 @@ export default navbar([
     text: "框架",
     prefix: "/框架",
     children: [
+      {
+        text: "Java Web",
+        link: "/Java Web/01-基础（一）.md",
+      },
       {
         text: "Spring",
         prefix: "/Spring",
@@ -78,6 +116,11 @@ export default navbar([
             // icon: "pen-to-square",
             link: "/SpringCloud/01-基础（一）.md",
           },
+          {
+            text: "Spring Security",
+            // icon: "pen-to-square",
+            link: "/Spring Security/01-基础（一）.md",
+          },
         ]
       },
       {
@@ -96,6 +139,49 @@ export default navbar([
           },
         ]
       },
+      {
+        text: "分布式",
+        prefix: "/分布式",
+        children: [
+          {
+            text: "Dubbo",
+            // icon: "pen-to-square",
+            link: "/Dubbo/01-基础（一）.md",
+          },
+          {
+            text: "Zookeeper",
+            // icon: "pen-to-square",
+            link: "/Zookeeper/01-基础（一）.md",
+          },
+        ]
+      },
+      {
+        text: "网络IO",
+        prefix: "/网络IO",
+        children: [
+          {
+            text: "Netty",
+            // icon: "pen-to-square",
+            link: "/Netty/01-基础（一）.md",
+          },
+          {
+            text: "Nginx",
+            // icon: "pen-to-square",
+            link: "/Nginx/01-基础（一）.md",
+          },
+        ]
+      },
+      {
+        text: "消息队列",
+        prefix: "/消息队列",
+        children: [
+          {
+            text: "RabbitMQ",
+            // icon: "pen-to-square",
+            link: "/RabbitMQ/01-基础（一）.md",
+          },
+        ]
+      },
     ]
   },
   {
@@ -106,6 +192,11 @@ export default navbar([
         text: "Docker",
         // icon: "pen-to-square",
         link: "/Docker/01-基础（一）.md",
+      },
+      {
+        text: "K8S",
+        // icon: "pen-to-square",
+        link: "/K8S/01-基础（一）.md",
       },
       {
         text: "Git",
@@ -121,49 +212,26 @@ export default navbar([
         text: "Maven",
         // icon: "pen-to-square",
         link: "/Maven/01-基础（一）.md",
+      },      
+    ]
+  },
+  {
+    text: "开发",
+    prefix: "/开发",
+    children: [
+      {
+        text: "代码规范",
+        // icon: "pen-to-square",
+        link: "/代码规范/01-基础（一）.md",
       },
-      
+      {
+        text: "设计模式",
+        // icon: "pen-to-square",
+        link: "/设计模式/01-基础（一）.md",
+      },
     ]
   },
   // {
-  //   text: "Java",
-  //   // icon: "pen-to-square",
-  //   prefix: "/java",
-  //   children: [
-  //     {
-  //       text: "Java基础",
-  //       // icon: "pen-to-square",
-  //       prefix: "/basic",
-  //       children: [
-  //         {
-  //           text: "面向对象1",
-  //           // icon: "pen-to-square",
-  //           link: "/oop1",
-  //         },
-  //         {
-  //           text: "面向对象2",
-  //           // icon: "pen-to-square",
-  //           link: "/oop2"
-  //         },
-  //       ]
-  //     },
-  //     {
-  //       text: "Java进阶",
-  //       // icon: "pen-to-square",
-  //       prefix: "/advanced",
-  //       children: [
-  //         {
-  //           text: "集合框架",
-  //           // icon: "pen-to-square",
-  //           link: "/list"
-  //         },
-  //         {
-  //           text: "并发框架",
-  //           // icon: "pen-to-square",
-  //           link: "/concurrent"
-  //         },
-  //       ]
-  //     },
-  //   ]
+  //   text: "架构"
   // },
 ]);
