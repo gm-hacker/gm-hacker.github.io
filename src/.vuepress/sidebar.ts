@@ -1,7 +1,12 @@
 import { sidebar } from "vuepress-theme-hope";
 
 export default sidebar({
-    "/Java/":"structure",
+    "/Java/基础":"structure",
+    "/Java/集合":"structure",
+    "/Java/并发":"structure",
+    "/Java/IO":"structure",
+    "/Java/新特性":"structure",
+    "/Java/JVM":"structure",
     "/数据库/MySQL/":"structure",
     "/数据库/Redis/":"structure",
     "/数据库/MongoDB/":"structure",
