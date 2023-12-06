@@ -189,6 +189,11 @@ export default navbar([
     prefix: "/工具",
     children: [
       {
+        text: "Idea",
+        // icon: "pen-to-square",
+        link: "/Idea/03-IDEA 常用快捷键.md",
+      },
+      {
         text: "Docker",
         // icon: "pen-to-square",
         link: "/Docker/01-基础（一）.md",

@@ -1,10 +1,13 @@
-# 第11章_常用类和基础API
+---
+date: 2023-03-11
+category:
+  - Java
+tag:
+  - Java
+order: 11
+---
 
-讲师：尚硅谷-宋红康（江湖人称：康师傅）
-
-官网：[http://www.atguigu.com](http://www.atguigu.com/)
-
-***
+# 常用类和基础API
 
 ## 本章专题与脉络
 
