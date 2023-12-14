@@ -9,7 +9,7 @@ export default navbar([
       {
         text: "基础",
         // icon: "pen-to-square",
-        link: "/基础/01-总览.md",
+        link: "/基础/01-Java语言概述.md",
       },
       {
         text: "集合",
