@@ -128,6 +128,11 @@ export default navbar([
         prefix: "/持久层",
         children: [
           {
+            text: "JDBC",
+            // icon: "pen-to-square",
+            link: "/05-JDBC.md",
+          },
+          {
             text: "MyBatis",
             // icon: "pen-to-square",
             link: "/01-MyBatis（一）.md",

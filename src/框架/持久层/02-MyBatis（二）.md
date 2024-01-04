@@ -5,7 +5,7 @@ category:
   - MyBatis
 tag:
   - MyBatis
-order: 2
+order: 3
 ---
 
 # MyBatis（二）
