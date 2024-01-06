@@ -1204,37 +1204,29 @@ DataSource = 第三方连接池】
 
 ### 5.1 连接性能消耗问题分析
 
+![image-20240106145431382](image/image-20240106145431382.png)
+
 ### 5.2 数据库连接池作用
 
-```Java
 **总结缺点:**
-（1）不使用数据库连接池，每次都通过DriverManager获取新连接，用完直接抛弃断开，
-连接的利用率太低，太浪费。
-（2）对于数据库服务器来说，压力太大了。我们数据库服务器和Java程序对连接数也无法控制
-，很容易导致数据库服务器崩溃。
+（1）不使用数据库连接池，每次都通过DriverManager获取新连接，用完直接抛弃断开，连接的利用率太低，太浪费。
+
+（2）对于数据库服务器来说，压力太大了。我们数据库服务器和Java程序对连接数也无法控制，很容易导致数据库服务器崩溃。
 
 **我们就希望能管理连接。**
-- 我们可以建立一个连接池，这个池中可以容纳一定数量的连接对象，一开始，
-  我们可以先替用户先创建好一些连接对象，等用户要拿连接对象时，就直接从池中拿，
-  不用新建了，这样也可以节省时间。然后用户用完后，放回去，别人可以接着用。
-- 可以提高连接的使用率。当池中的现有的连接都用完了，**那么连接池可以向服务器申
-  请新的连接放到池中。**
+
+- 我们可以建立一个连接池，这个池中可以容纳一定数量的连接对象，一开始，我们可以先替用户先创建好一些连接对象，等用户要拿连接对象时，就直接从池中拿，不用新建了，这样也可以节省时间。然后用户用完后，放回去，别人可以接着用。
+- 可以提高连接的使用率。当池中的现有的连接都用完了，**那么连接池可以向服务器申请新的连接放到池中。**
 - 直到池中的连接达到“最大连接数”，就不能在申请新的连接了，如果没有拿到连接的用户只能等待。
-```
 
 ### 5.3 市面常见连接池产品和对比
 
-```Java
-JDBC 的数据库连接池使用 javax.sql.**DataSource**接口进行规范,**所有**的第三方**连接池**
-     **都实现此接口**,自行添加具体实现!也就是说,**所有连接池获取连接的和回收****
-     连接方法都一样**,不同的只有性能和扩展功能!
-    - DBCP 是Apache提供的数据库连接池，速度相对c3p0较快，但因自身存在BUG
-    - C3P0 是一个开源组织提供的一个数据库连接池，速度相对较慢，稳定性还可以
-    - Proxool 是sourceforge下的一个开源项目数据库连接池，有监控连接池状态的功能，
-       稳定性较c3p0差一点
-    - Druid 是阿里提供的数据库连接池，据说是集DBCP 、C3P0 、Proxool 优点于一身
-      的数据库连接池,**妥妥国货之光!!!!**
-```
+JDBC 的数据库连接池使用 javax.sql.**DataSource**接口进行规范，所有**的第三方**连接池**都实现此接口**，自行添加具体实现!也就是说，**所有连接池获取连接的和回收连接方法都一样**，不同的只有性能和扩展功能！
+
+- DBCP 是Apache提供的数据库连接池，速度相对c3p0较快，但因自身存在BUG
+- C3P0 是一个开源组织提供的一个数据库连接池，速度相对较慢，稳定性还可以
+- Proxool 是sourceforge下的一个开源项目数据库连接池，有监控连接池状态的功能，稳定性较c3p0差一点
+- Druid 是阿里提供的数据库连接池，据说是集DBCP 、C3P0 、Proxool 优点于一身的数据库连接池,**妥妥国货之光!!!!**
 
 ![img](image/image-17043822428585.png)
 
@@ -1283,9 +1275,8 @@ public void druidHard() throws SQLException {
 
 - 软编码方式
 
-  - 外部配置
+  - 外部配置：存放在**src/druid.properties**
 
-    存放在**src/druid.properties**
 
 ```properties
 # druid连接池需要的配置参数,key固定命名
@@ -1352,9 +1343,7 @@ BaseDao针对34567进行封装，进行增删改查
 
 > 我们封装一个工具类,内部包含**连接池对象**,同时对外提供连接的方法和回收连接的方法!
 
-外部配置文件
-
-位置: src/druid.properties
+外部配置文件，位置: src/druid.properties
 
 ```properties
 # druid连接池需要的配置参数,key固定命名
@@ -1387,8 +1376,9 @@ public class JDBCToolsVersion1 {
     }
 
     public static Connection getConnection() throws SQLException {
-        return ds.getConnection();//这么写，不能保证同一个线程，两次getConnection()得到的是同一个Connection对象
-                            //如果不能保证是同一个连接对象，就无法保证事务的管理
+        return ds.getConnection();
+        //这么写，不能保证同一个线程，两次getConnection()得到的是同一个Connection对象
+        //如果不能保证是同一个连接对象，就无法保证事务的管理
     }
 
     public static void free(Connection conn) throws SQLException {
@@ -1402,24 +1392,21 @@ public class JDBCToolsVersion1 {
 
 > 优化工具类v1.0版本,考虑事务的情况下!如何一个线程的不同方法获取同一个连接!
 
-```Java
 ThreadLocal的介绍：
-线程本地变量：为同一个线程存储共享变量
-JDK 1.2的版本中就提供java.lang.ThreadLocal，为解决多线程程序的并发问题提供了一种新的思路。
-使用这个工具类可以很简洁地编写出优美的多线程程序。通常用来在在多线程中管理共享数据库连接、
-Session等
 
-ThreadLocal用于保存某个线程共享变量，原因是在Java中，每一个线程对象中都有一个
-ThreadLocalMap<ThreadLocal, Object>，其key就是一个ThreadLocal，而Object即为该线程的
-共享变量。而这个map是通过ThreadLocal的set和get方法操作的。对于同一个static ThreadLocal，
-不同线程只能从中get，set，remove自己的变量，而不会影响其他线程的变量。
+线程本地变量：为同一个线程存储共享变量
+
+JDK 1.2的版本中就提供java.lang.ThreadLocal，为解决多线程程序的并发问题提供了一种新的思路。
+
+使用这个工具类可以很简洁地编写出优美的多线程程序。通常用来在在多线程中管理共享数据库连接、Session等
+
+ThreadLocal用于保存某个线程共享变量，原因是在Java中，每一个线程对象中都有一个ThreadLocalMap<ThreadLocal, Object>，其key就是一个ThreadLocal，而Object即为该线程的共享变量。而这个map是通过ThreadLocal的set和get方法操作的。对于同一个static ThreadLocal，不同线程只能从中get，set，remove自己的变量，而不会影响其他线程的变量。
 
 1、ThreadLocal对象.get: 获取ThreadLocal中当前线程共享变量的值。
 
 2、ThreadLocal对象.set: 设置ThreadLocal中当前线程共享变量的值。
 
 3、ThreadLocal对象.remove: 移除ThreadLocal中当前线程共享变量的值。
-```
 
 v2.0版本工具类
 
@@ -1469,7 +1456,7 @@ public class JDBCTools {
 }
 ```
 
-**注意: ****修改转账业务,使用此工具类**
+**注意: 修改转账业务,使用此工具类**
 
 ### 6.3 高级应用层封装BaseDao
 
