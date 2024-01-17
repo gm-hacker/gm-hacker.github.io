@@ -14,4 +14,5 @@ export default sidebar({
     "/框架/消息队列/":"structure",
     "/工具/":"structure",
     "/开发/":"structure",
+    "/证券交易/":"structure"
 });
