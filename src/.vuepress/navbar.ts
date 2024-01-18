@@ -243,6 +243,6 @@ export default navbar([
   },
   {
     text: "证券交易",
-    link: "/证券交易/日本蜡烛图技术.md",
+    link: "/证券交易/01-总览.md",
   },
 ]);
