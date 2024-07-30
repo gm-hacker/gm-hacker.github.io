@@ -13,12 +13,13 @@ export default navbar([
     link: "https://theme-hope.vuejs.press/zh/",
   },
   {
-    text: "他人经验",
+    text: "经验杂谈",
     icon: "book",
-    prefix: "/fenxi/",
-    children: [
-      { text: "banana3", icon: "pen-to-square", link: "banana3" },
-      { text: "laolu", icon: "pen-to-square", link: "laolu" },
-    ]
+    link: "/经验杂谈/01-总览.md",
+    // prefix: "/经验杂谈/",
+    // children: [
+    //   { text: "banana3", icon: "pen-to-square", link: "banana3" },
+    //   { text: "laolu", icon: "pen-to-square", link: "laolu" },
+    // ]
   },
 ]);
