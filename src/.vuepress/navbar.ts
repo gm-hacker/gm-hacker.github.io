@@ -3,14 +3,19 @@ import { navbar } from "vuepress-theme-hope";
 export default navbar([
   "/",
   {
+    text: "股票分析",
+    icon: "arrow-trend-up",
+    link: "/股票分析/01-总览.md",
+  },
+  {
     text: "交易日志",
     icon: "clipboard",
     link: "/交易日志/01-总览.md",
   },
   {
-    text: "读书笔记",
+    text: "学习笔记",
     icon: "book",
-    link: "https://theme-hope.vuejs.press/zh/",
+    link: "/学习笔记/01-总览.md",
   },
   {
     text: "经验杂谈",
