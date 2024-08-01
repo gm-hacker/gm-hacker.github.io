@@ -5,7 +5,7 @@ export default navbar([
   {
     text: "交易日志",
     icon: "clipboard",
-    link: "https://theme-hope.vuejs.press/zh/",
+    link: "/交易日志/01-总览.md",
   },
   {
     text: "读书笔记",
@@ -14,7 +14,7 @@ export default navbar([
   },
   {
     text: "经验杂谈",
-    icon: "book",
+    icon: "mug-saucer",
     link: "/经验杂谈/01-总览.md",
     // prefix: "/经验杂谈/",
     // children: [
