@@ -48,13 +48,13 @@ export default hopeTheme({
   },
 
   // 加密配置
-  // encrypt: {
-  //   global: true,
-  //   admin: "Fe1lzxsqc@jrx",
-  //   config: {
-  //     "/demo/encrypt.html": ["1234"],
-  //   },
-  // },
+  encrypt: {
+    global: true,
+    admin: "Porsche992",
+    // config: {
+    //   "/demo/encrypt.html": ["1234"],
+    // },
+  },
 
   // 多语言配置
   metaLocales: {
